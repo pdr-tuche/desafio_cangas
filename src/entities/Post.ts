@@ -2,7 +2,7 @@ import {
     Entity,
     Column,
     CreateDateColumn,
-    PrimaryColumn,
+    PrimaryGeneratedColumn,
     ManyToOne,
     JoinColumn,
 } from "typeorm";
@@ -10,10 +10,10 @@ import { User } from "./User";
 
 @Entity("posts")
 export class Post {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ nullable: true })
     title: string;
 
     @Column()
@@ -25,7 +25,7 @@ export class Post {
     @Column()
     user_id: number;
 
-    @ManyToOne(() => User)
+    @ManyToOne(() => User, (user) => user.posts)
     @JoinColumn({ name: "user_id" })
     user: User;
 }
