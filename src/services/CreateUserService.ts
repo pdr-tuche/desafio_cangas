@@ -1,5 +1,5 @@
-import { PostgresDataSource } from "../database/app-data-source";
 import { User } from "../entities/User";
+import { userRepository } from "../repositories/UserRepository";
 
 type UserRequest = {
     name: string;
@@ -13,8 +13,6 @@ export class CreateUserService {
         email,
         password,
     }: UserRequest): Promise<User | Error> {
-        const userRepository = PostgresDataSource.getRepository(User);
-
         if (await userRepository.findOne({ where: { email } })) {
             return new Error("User already exists");
         }

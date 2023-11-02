@@ -1,5 +1,4 @@
-import { PostgresDataSource } from "../database/app-data-source";
-import { User } from "../entities/User";
+import { userRepository } from "../repositories/UserRepository";
 
 type UserUpdateRequest = {
     id: string;
@@ -9,9 +8,7 @@ type UserUpdateRequest = {
 
 export class UpdateUserService {
     async execute({ id, name, email }: UserUpdateRequest) {
-        const usersRepository = PostgresDataSource.getRepository(User);
-
-        const user = await usersRepository.findOne({
+        const user = await userRepository.findOne({
             where: { id: Number(id) },
         });
 
@@ -22,7 +19,7 @@ export class UpdateUserService {
         user.name = name ? name : user.name;
         user.email = email ? email : user.email;
 
-        await usersRepository.save(user);
+        await userRepository.save(user);
 
         return user;
     }
