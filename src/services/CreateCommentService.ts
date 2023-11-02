@@ -27,8 +27,13 @@ export class CreateCommentService {
             post_id: Number(post_id),
             user_id: Number(user_id),
         });
-
         await commentRepository.save(comment);
+
+        const numberOfComments = await commentRepository.countCommentsByPostId(
+            post.id
+        );
+        post.numberOfComments = numberOfComments;
+        await postRepository.save(post);
 
         return comment;
     }

@@ -33,4 +33,7 @@ export class Post {
 
     @OneToMany(() => Comment, (comment) => comment.post)
     comments: Comment[];
+
+    @Column({ nullable: true })
+    numberOfComments: number;
 }
