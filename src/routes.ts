@@ -5,6 +5,7 @@ import { DeleteUserController } from "./controllers/DeleteUserController";
 import { UpdateUserController } from "./controllers/UpdateUserController";
 import { CreatePostController } from "./controllers/CreatePostController";
 import { GetAllPostsController } from "./controllers/GetAllPostsController";
+import { DeletePostController } from "./controllers/DeletePostController";
 
 const router = Router();
 
@@ -21,5 +22,6 @@ router.put("/users/:id", new UpdateUserController().handle);
 // Posts routes
 router.post("/posts", new CreatePostController().handle);
 router.get("/posts", new GetAllPostsController().handle);
+router.delete("/posts/:id", new DeletePostController().handle);
 
 export { router };
