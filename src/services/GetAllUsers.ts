@@ -4,7 +4,9 @@ import { userRepository } from "../repositories/UserRepository";
 
 export class GetAllUsersService {
     async execute(): Promise<User[] | Error> {
-        const users = await userRepository.find();
+        const users = await userRepository.find({
+            relations: ["posts"],
+        });
 
         return users;
     }

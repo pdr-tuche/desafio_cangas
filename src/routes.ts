@@ -7,6 +7,8 @@ import { CreatePostController } from "./controllers/CreatePostController";
 import { GetAllPostsController } from "./controllers/GetAllPostsController";
 import { DeletePostController } from "./controllers/DeletePostController";
 import { UpdatePostController } from "./controllers/UpdatePostController";
+import { CreateCommentController } from "./controllers/CreateCommentController";
+import { GetAllCommentsController } from "./controllers/GetAllCommentsController";
 
 const router = Router();
 
@@ -25,5 +27,9 @@ router.post("/posts", new CreatePostController().handle);
 router.get("/posts", new GetAllPostsController().handle);
 router.delete("/posts/:id", new DeletePostController().handle);
 router.put("/posts/:id", new UpdatePostController().handle);
+
+// Comments routes
+router.post("/comments", new CreateCommentController().handle);
+router.get("/comments", new GetAllCommentsController().handle);
 
 export { router };
