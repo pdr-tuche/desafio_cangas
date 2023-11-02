@@ -1,14 +1,11 @@
-import { PostgresDataSource } from "../database/app-data-source";
-import { Post } from "../entities/Post";
+import { postRepository } from "../repositories/PostRepository";
 
 export class DeletePostService {
     async execute(id: string) {
-        const postsRepository = PostgresDataSource.getRepository(Post);
-
-        if (!(await postsRepository.findOne({ where: { id: Number(id) } }))) {
+        if (!(await postRepository.findOne({ where: { id: Number(id) } }))) {
             return new Error("Post not found");
         }
 
-        await postsRepository.delete(id);
+        await postRepository.delete(id);
     }
 }
