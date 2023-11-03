@@ -1,5 +1,5 @@
-import { User } from "../entities/User";
 import { userRepository } from "../repositories/UserRepository";
+import bcrypt from "bcrypt";
 
 type UserRequest = {
     name: string;
@@ -8,28 +8,23 @@ type UserRequest = {
 };
 
 export class CreateUserService {
-    async execute({
-        name,
-        email,
-        password,
-    }: UserRequest): Promise<User | Error> {
+    async execute({ name, email, password }: UserRequest) {
         if (await userRepository.findOne({ where: { email } })) {
             return new Error("User already exists");
         }
 
-        const lastId = await userRepository.query("SELECT MAX(id) FROM users;");
-        console.log(lastId);
-        const lastIdValue = lastId[0].max;
+        const passwordHash = await bcrypt.hash(password, 8);
 
         const user = userRepository.create({
-            id: lastIdValue + 1,
             name,
             email,
-            password,
+            password: passwordHash,
         });
 
         await userRepository.save(user);
 
-        return user;
+        const { password: _, ...userWithoutPasswordProp } = user;
+
+        return userWithoutPasswordProp;
     }
 }

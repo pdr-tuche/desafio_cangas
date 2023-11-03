@@ -12,6 +12,8 @@ import { GetAllCommentsController } from "./controllers/GetAllCommentsController
 import { DeleteCommentController } from "./controllers/DeleteCommentController";
 import { GetPostByIdController } from "./controllers/GetPostByIdControllet";
 import { GetCommentByIdController } from "./controllers/GetCommentByIdController";
+import { LoginController } from "./controllers/LoginController";
+import { VerifyTokenController } from "./controllers/VerifyTokenController";
 
 const router = Router();
 
@@ -38,5 +40,9 @@ router.get("/comments", new GetAllCommentsController().handle);
 router.delete("/comments/:id", new DeleteCommentController().handle);
 
 router.get("/comments/:id", new GetCommentByIdController().handle);
+
+// auth routes
+router.post("/login", new LoginController().handle);
+router.get("/verify", new VerifyTokenController().handle);
 
 export { router };
