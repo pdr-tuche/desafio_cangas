@@ -1,24 +1,36 @@
 import { Request, Response } from "express";
 import { DeleteCommentService } from "../services/DeleteCommentService";
-import { commentRepository } from "../repositories/CommentRepository";
 import { postRepository } from "../repositories/PostRepository";
-import { GetAllPostsService } from "../services/GetAllPostsService";
-import { UpdatePostService } from "../services/UpdatePostService";
+import { GetCommentByIdService } from "../services/GetCommentByIdService";
+import { GetPostByIdService } from "../services/GetPostByIdService";
 
 export class DeleteCommentController {
     async handle(req: Request, res: Response) {
         const { id } = req.params;
 
-        const service = new DeleteCommentService();
+        const serviceDelete = new DeleteCommentService();
+        const serviceGetById = new GetCommentByIdService();
 
-        const result = await service.execute(id);
-
-        if (result instanceof Error) {
-            return res.status(404).json({ error: result.message });
+        const comment = await serviceGetById.execute(id);
+        if (comment instanceof Error) {
+            return res.status(404).json({ error: comment.message });
         }
 
-        // aqui tem que atualizar a quantidade de comentarios dos POSTS
+        const postId = comment.post_id;
+        const deletedComment = await serviceDelete.execute(id);
+        if (deletedComment instanceof Error) {
+            return res.status(404).json({ error: deletedComment.message });
+        }
 
-        return res.status(204).end();
+        // Atualiza o número de comentários do post
+        const serviceGetPostById = new GetPostByIdService();
+        const post = await serviceGetPostById.execute(postId.toString());
+        if (post instanceof Error) {
+            return res.status(404).json({ error: post.message });
+        }
+        post.numberOfComments = post.numberOfComments - 1;
+        await postRepository.save(post);
+
+        return res.status(204).end(); // exclusao do comentario com sucesso
     }
 }
