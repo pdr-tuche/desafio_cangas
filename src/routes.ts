@@ -9,6 +9,7 @@ import { DeletePostController } from "./controllers/DeletePostController";
 import { UpdatePostController } from "./controllers/UpdatePostController";
 import { CreateCommentController } from "./controllers/CreateCommentController";
 import { GetAllCommentsController } from "./controllers/GetAllCommentsController";
+import { DeleteCommentController } from "./controllers/DeleteCommentController";
 
 const router = Router();
 
@@ -31,5 +32,6 @@ router.put("/posts/:id", new UpdatePostController().handle);
 // Comments routes
 router.post("/comments", new CreateCommentController().handle);
 router.get("/comments", new GetAllCommentsController().handle);
+router.delete("/comments/:id", new DeleteCommentController().handle);
 
 export { router };
