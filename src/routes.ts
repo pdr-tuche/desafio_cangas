@@ -14,6 +14,8 @@ import { GetPostByIdController } from "./controllers/GetPostByIdControllet";
 import { GetCommentByIdController } from "./controllers/GetCommentByIdController";
 import { LoginController } from "./controllers/LoginController";
 import { VerifyTokenController } from "./controllers/VerifyTokenController";
+import { UpdateCommentController } from "./controllers/UpdateCommentController";
+import { GetUserByIdController } from "./controllers/GetUserByIdController";
 
 const router = Router();
 
@@ -26,6 +28,7 @@ router.post("/users", new CreateUserController().handle);
 router.get("/users", new GetAllUsersController().handle);
 router.delete("/users/:id", new DeleteUserController().handle);
 router.put("/users/:id", new UpdateUserController().handle);
+router.get("/users/:id", new GetUserByIdController().handle);
 
 // Posts routes
 router.post("/posts", new CreatePostController().handle);
@@ -38,7 +41,7 @@ router.get("/posts/:id", new GetPostByIdController().handle);
 router.post("/comments", new CreateCommentController().handle);
 router.get("/comments", new GetAllCommentsController().handle);
 router.delete("/comments/:id", new DeleteCommentController().handle);
-
+router.put("/comments/:id", new UpdateCommentController().handle);
 router.get("/comments/:id", new GetCommentByIdController().handle);
 
 // auth routes
