@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 export const EmailService = nodemailer.createTransport({
-    service: "outlook",
+    service: process.env.EMAIL_SERVICE,
     host: process.env.EMAIL_HOST,
     port: Number(process.env.EMAIL_PORT),
     auth: {

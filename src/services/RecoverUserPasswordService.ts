@@ -15,7 +15,7 @@ export class RecoverUserPasswordService {
             from: process.env.EMAIL_USER,
             to: email,
             subject: "Password recovery",
-            text: `${process.env.BASE_URL}/users/${user.id}/confirmedRecover`,
+            text: `envie newPassword e reNewPassword para:\n${process.env.BASE_URL}/users/${user.id}/confirmedRecover`,
         })
             .then((message) => {
                 console.log(message);
