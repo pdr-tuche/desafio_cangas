@@ -29,6 +29,18 @@ router.get("/users", new GetAllUsersController().handle);
 router.delete("/users/:id", new DeleteUserController().handle);
 router.put("/users/:id", new UpdateUserController().handle);
 router.get("/users/:id", new GetUserByIdController().handle);
+router.put(
+    "/users/:id/updatePassword",
+    new UpdateUserController().updatePassword
+);
+router.post(
+    "/users/recoverPassword/",
+    new UpdateUserController().recoverPassword
+);
+router.post(
+    "/users/:id/confirmedRecover",
+    new UpdateUserController().confirmedRecover
+);
 
 // Posts routes
 router.post("/posts", new CreatePostController().handle);
