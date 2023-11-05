@@ -1,0 +1,32 @@
+_id: req_5224d2fc7bed47fcab4064e3563a7f91
+type: Request
+parentId: fld_660b6434c1c34024972b37cc92dfd1b2
+modified: 1699197029238
+created: 1699192372144
+url: "{{ _.baseurl }}/users/2/updatePassword"
+name: Update User Password
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"currentPassword":"minhanovasenha",
+    	"newPassword": "kkkk",
+    	"reNewPassword":"kkkk"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1699191070289
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

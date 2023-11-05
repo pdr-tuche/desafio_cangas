@@ -1,0 +1,30 @@
+_id: req_8ed8b226530f438c8736d9ca9acd87cf
+type: Request
+parentId: fld_ecefdc4af605472b89efcbbe8198392b
+modified: 1699191043529
+created: 1699190760354
+url: "{{ _.baseurl }}/comments/5"
+name: Update Comment
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"content": "voce e mt legal"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1699190760354
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

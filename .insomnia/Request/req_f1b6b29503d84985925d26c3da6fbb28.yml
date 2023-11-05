@@ -1,0 +1,23 @@
+_id: req_f1b6b29503d84985925d26c3da6fbb28
+type: Request
+parentId: fld_ecefdc4af605472b89efcbbe8198392b
+modified: 1698964838174
+created: 1698935963663
+url: "{{ _.baseurl }}/comments"
+name: Get Comments
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1698935963663
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

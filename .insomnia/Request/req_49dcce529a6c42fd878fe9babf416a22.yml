@@ -1,0 +1,32 @@
+_id: req_49dcce529a6c42fd878fe9babf416a22
+type: Request
+parentId: fld_660b6434c1c34024972b37cc92dfd1b2
+modified: 1699209321639
+created: 1698897092662
+url: "{{ _.baseurl }}/users/1"
+name: Update User
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"id": 2,
+    	"name": "Pedrasfasfo",
+    	"email": "mail.nevespedro@gmail.com"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1698897092662
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

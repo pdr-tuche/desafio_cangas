@@ -1,0 +1,25 @@
+_id: req_f0c2d5e2ba0e4a138b22d4eed8c113dc
+type: Request
+parentId: fld_da18497d473643fcb37dff7088049f2f
+modified: 1698990791270
+created: 1698990737060
+url: "{{ _.baseurl }}/verify"
+name: Verify Token
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNjk4OTg5NDM0LCJleHAiOjE2OTg5OTY2MzR9.xgBlQqOU6Fd0xh8sF5nwZyUjNPSGZQaCyfUthD18HxE
+metaSortKey: -1698990737060
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

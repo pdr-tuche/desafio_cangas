@@ -1,0 +1,23 @@
+_id: req_e6528ecfbd804277b015d065932a8e42
+type: Request
+parentId: fld_bce4047af5dd46b3aa23678c48398f13
+modified: 1698923235481
+created: 1698899446607
+url: "{{ _.baseurl }}/posts/3"
+name: Delete Post
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1698899446607
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

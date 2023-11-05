@@ -1,0 +1,31 @@
+_id: req_d904f573ad204a4b97d345af401873ae
+type: Request
+parentId: fld_bce4047af5dd46b3aa23678c48398f13
+modified: 1699190290874
+created: 1698926287287
+url: "{{ _.baseurl }}/posts/1"
+name: Update Post
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"title": "filho de iansa",
+    	"content": "sou filho de iansa"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1698926287287
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

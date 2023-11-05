@@ -1,0 +1,32 @@
+_id: req_08e4ba838da94fbeba351ac7810807bd
+type: Request
+parentId: fld_bce4047af5dd46b3aa23678c48398f13
+modified: 1698923252195
+created: 1698898034248
+url: "{{ _.baseurl }}/posts/"
+name: Create Post
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"title": "Iansa",
+    	"content": "sou filha de iansa",
+    	"user_id": 2
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1698898034248
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,30 @@
+_id: req_3e26d64dc8c84682af7f42695bc729d4
+type: Request
+parentId: fld_660b6434c1c34024972b37cc92dfd1b2
+modified: 1699213620859
+created: 1699209435525
+url: "{{ _.baseurl }}/users/recoverPassword"
+name: Recover Password
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email":"mail.nevespedro@gmail.com"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1699209435525
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

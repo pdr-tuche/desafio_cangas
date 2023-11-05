@@ -1,0 +1,31 @@
+_id: req_ffc100a01ece4fc9afb98a65d4137807
+type: Request
+parentId: fld_da18497d473643fcb37dff7088049f2f
+modified: 1699196953836
+created: 1698989358002
+url: "{{ _.baseurl }}/login"
+name: Login (Create Token)
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email":"Sam@example.com",
+    	"password":"kkkk"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1698989358002
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

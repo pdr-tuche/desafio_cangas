@@ -1,0 +1,32 @@
+_id: req_eedc12e60143461aa62e6a74d2fe8e39
+type: Request
+parentId: fld_ecefdc4af605472b89efcbbe8198392b
+modified: 1698968746130
+created: 1698933644464
+url: "{{ _.baseurl }}/comments"
+name: Create Comment
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"content": "excluir isso aqui",
+    	"post_id": 4,
+    	"user_id": 1
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1698933644464
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
