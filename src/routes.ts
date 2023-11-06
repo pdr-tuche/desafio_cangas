@@ -20,7 +20,11 @@ import { GetUserByIdController } from "./controllers/GetUserByIdController";
 const router = Router();
 
 router.get("/", (req, res) => {
-    res.json({ message: "Hello World" });
+    res.json({
+        criadoPor: "Pedro Neves",
+        linkedin: "https://www.linkedin.com/in/pdr-neves/",
+        github: "https://github.com/pdr-tuche/",
+    });
 });
 
 // Users routes
